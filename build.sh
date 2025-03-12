@@ -2,23 +2,19 @@
 
 set -ouex pipefail
 
-### Install packages
+# Install ghostty, get rid of previous terminal
+dnf5 -y copr enable pgdev/ghostty
+dnf5 -y install ghostty
+dnf5 -y copr disable pgdev/ghostty
+dnf5 -y remove ptyxis
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+# Install apps I want
+dnf5 -y install zsh neovim python3-neovim
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# Remove apps I don't care about
+dnf5 -y remove waydroid # Maybe later?
+dnf5 -y remove ghostscript # I don't print on desktop, and I hate CUPS
+dnf5 -y remove kate-libs # KWrite/Kate
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
-
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+# Fonts! After install, get Windows 11 fonts from the Windows ISO and put them in $HOME/.local/share/fonts
+dnf5 install -y --allowerasing --skip-broken google-noto-*

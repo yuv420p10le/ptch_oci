@@ -11,6 +11,9 @@ dnf5 -y remove ptyxis
 # Install apps I want
 dnf5 -y install zsh neovim python3-neovim
 
+# VDPAU for NVIDIA
+dnf5 -y install nvidia-vaapi-driver libva-utils vdpauinfo
+
 # Remove apps I don't care about
 dnf5 -y remove waydroid # Maybe later?
 dnf5 -y remove ghostscript # I don't print on desktop, and I hate CUPS

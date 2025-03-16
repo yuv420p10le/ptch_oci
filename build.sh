@@ -19,6 +19,9 @@ dnf5 -y group install "development-tools"
 dnf5 -y install zlib-devel bzip2 bzip2-devel readline-devel sqlite \
     sqlite-devel openssl-devel xz xz-devel libffi-devel findutils tk-devel
 
+# Certain build tools I need..
+dnf5 -y install libstdc++-static
+
 # Remove apps I don't care about
 dnf5 -y remove waydroid # Maybe later?
 dnf5 -y remove ghostscript # I don't print on desktop, and I hate CUPS

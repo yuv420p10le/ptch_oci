@@ -28,4 +28,6 @@ dnf5 -y remove ghostscript # I don't print on desktop, and I hate CUPS
 dnf5 -y remove kate-libs # KWrite/Kate
 
 # Fonts! After install, get Windows 11 fonts from the Windows ISO and put them in $HOME/.local/share/fonts
-dnf5 install -y --allowerasing --skip-broken google-noto-*
+dnf5 -y install --allowerasing --skip-broken google-noto-*
+dnf5 -y install --allowerasing --skip-broken jetbrains-mono-*
+dnf5 -y install --allowerasing --skip-broken fira-code-fonts

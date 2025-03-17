@@ -9,7 +9,7 @@ dnf5 -y copr disable pgdev/ghostty
 dnf5 -y remove ptyxis
 
 # Install apps I want
-dnf5 -y install zsh neovim python3-neovim
+dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui
 
 # VDPAU for NVIDIA
 dnf5 -y install nvidia-vaapi-driver libva-utils vdpauinfo

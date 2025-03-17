@@ -9,13 +9,16 @@ dnf5 -y copr disable pgdev/ghostty
 dnf5 -y remove ptyxis
 
 # Install apps I want
-dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui
+dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
+    python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \
+    vapoursynth-tools
 
 # VDPAU for NVIDIA
 dnf5 -y install nvidia-vaapi-driver libva-utils vdpauinfo
 
 # pyenv/Python deps
 dnf5 -y group install "development-tools"
+dnf5 -y group install "c-development"
 dnf5 -y install zlib-devel bzip2 bzip2-devel readline-devel sqlite \
     sqlite-devel openssl-devel xz xz-devel libffi-devel findutils tk-devel
 

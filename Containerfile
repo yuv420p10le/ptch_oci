@@ -1,7 +1,7 @@
-# FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
+FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
 
 # Go back to proprietary driver until GSP issues are fixed for KDE
-FROM ghcr.io/ublue-os/bazzite-nvidia:stable
+# FROM ghcr.io/ublue-os/bazzite-nvidia:stable
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script

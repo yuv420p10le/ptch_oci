@@ -5,7 +5,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: '05 10 * * *'  # 10:05am UTC everyday
+#    - cron: '05 10 * * *'  # 10:05am UTC everyday - stock template
+    - cron: "0 6 * * 1" # 6:00 utc monday - 1:20 hours after bazzite
   push:
     branches:
       - main

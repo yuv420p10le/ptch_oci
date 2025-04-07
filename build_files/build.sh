@@ -11,7 +11,7 @@ dnf5 -y remove ptyxis
 # Install apps I want
 dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
     python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \
-    vapoursynth-tools tldr thunderbird
+    vapoursynth-tools tldr thunderbird usbtop v4l-utils
 
 # VDPAU for NVIDIA
 dnf5 -y install nvidia-vaapi-driver libva-utils vdpauinfo

@@ -2,12 +2,6 @@
 
 set -ouex pipefail
 
-# Install ghostty, get rid of previous terminal
-dnf5 -y copr enable pgdev/ghostty
-dnf5 -y install ghostty
-dnf5 -y copr disable pgdev/ghostty
-dnf5 -y remove ptyxis
-
 # Install apps I want
 dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
     python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \

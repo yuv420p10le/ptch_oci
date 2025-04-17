@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 6 * * 1" # 6:00 utc monday - 1:20 hours after bazzite
+    - cron: "10 9 * * 1" # 2 hours after bazzite-dx upstream
   push:
     branches:
       - main

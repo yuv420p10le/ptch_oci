@@ -7,9 +7,6 @@ dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
     python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \
     vapoursynth-tools tldr thunderbird usbtop v4l-utils
 
-# VDPAU for NVIDIA
-dnf5 -y install nvidia-vaapi-driver libva-utils vdpauinfo
-
 # pyenv/Python deps
 dnf5 -y group install "development-tools"
 dnf5 -y group install "c-development"

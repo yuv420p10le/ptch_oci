@@ -2,11 +2,6 @@
 
 set -ouex pipefail
 
-# Will be removed after 9070 XT is stable
-# https://fedoraproject.org/wiki/RawhideKernelNodebug
-dnf5 -y config-manager addrepo --from-repofile=https://dl.fedoraproject.org/pub/alt/rawhide-kernel-nodebug/fedora-rawhide-kernel-nodebug.repo
-dnf5 -y upgrade
-
 # Install apps I want
 dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
     python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \

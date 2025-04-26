@@ -19,7 +19,7 @@
     },
     {
       "automerge": true,
-      "matchUpdateTypes": ["digest", "pinDigest", "pin"],
+      "matchUpdateTypes": ["digest"],
       "matchDepNames": ["ghcr.io/ublue-os/bazzite-dx"],
     }
   ]

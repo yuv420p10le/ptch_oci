@@ -8,7 +8,7 @@ dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
     vapoursynth-tools tldr thunderbird usbtop v4l-utils libunity
 
 # Vesktop rpm - Flatpak is problematic; AppImage has some weirdness with GPU acceleration
-dnf5 -y install https://vencord.dev/download/vesktop/amd64/rpm
+dnf5 -y --allowerasing --force install https://vencord.dev/download/vesktop/amd64/rpm
 
 # pyenv/Python deps
 dnf5 -y group install "development-tools"

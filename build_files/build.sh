@@ -18,10 +18,9 @@ dnf5 -y install libstdc++-static
 
 # Remove apps I don't care about
 dnf5 -y remove waydroid # Maybe later?
-dnf5 -y remove ghostscript # I don't print on desktop, and I hate CUPS
 dnf5 -y remove kate-libs # KWrite/Kate
 dnf5 -y remove *akonadi* # Calendar/emails/contacts etc.. I use Thunderbird
-dnf5 -y remove *krfb* # VNC remove desktop - I prefer RDP
+dnf5 -y remove *krfb* # VNC remote desktop - I prefer RDP
 dnf5 -y remove gamescope-session-* # I don't understand why bazzite has it at all. I'm not on the -deck variant
 
 # Fonts! After install, get Windows 11 fonts from the Windows ISO and put them in $HOME/.local/share/fonts

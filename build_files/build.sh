@@ -28,5 +28,11 @@ dnf5 -y install --allowerasing --skip-broken google-noto-*
 dnf5 -y install --allowerasing --skip-broken jetbrains-mono-*
 dnf5 -y install --allowerasing --skip-broken fira-code-fonts
 
+# Vesktop
+# Installs to /opt/Vesktop by default, we'll move it to /usr/share/vesktop
+dnf5 -y install --allowerasing --skip-broken "https://vencord.dev/download/vesktop/amd64/rpm"
+mkdir -p /usr/share/Vesktop
+cp -r /opt/Vesktop /usr/share/
+
 # This was in the upstream build.sh.. whatever?
 systemctl enable podman.socket

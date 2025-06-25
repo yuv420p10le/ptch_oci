@@ -20,7 +20,7 @@
     {
       "automerge": true,
       "matchUpdateTypes": ["digest"],
-      "matchDepNames": ["ghcr.io/ublue-os/bazzite-dx"],
+      "matchDepNames": ["ghcr.io/ublue-os/aurora-dx"],
     }
   ]
 }

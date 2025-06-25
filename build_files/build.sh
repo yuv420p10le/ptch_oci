@@ -1,29 +1,19 @@
 #!/bin/bash
 
+# My opinionated aurora-dx image
+
 set -ouex pipefail
 
-# Install apps I want
-dnf5 -y install zsh neovim python3-neovim mkvtoolnix mkvtoolnix-gui \
-    python3-vapoursynth vapoursynth-devel vapoursynth-libs vapoursynth-plugins \
-    vapoursynth-tools tldr thunderbird usbtop v4l-utils libunity
+# Some apps such as Thunderbird and Vesktop will trigger notifications
+# The notifications cannot be clicked on the Flatpak version of the apps
+# Workarounds include using the native RPM version of the apps, or the AppImage (if exists)
+# For Thunderbird, I just use upstream so I can click the notifications
+# For Vesktop, the AppImage version would normally be fine, but if I use the AppImage
+# in conjution with libunity, then it'll actually display the notification count in the app icon
+# v4l-utils is needed for OBS Virtual Camera
+dnf5 -y install thunderbird v4l-utils libunity
 
-# pyenv/Python deps
-dnf5 -y group install "development-tools"
-dnf5 -y group install "c-development"
-dnf5 -y install zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-    sqlite-devel openssl-devel xz xz-devel libffi-devel findutils tk-devel
-
-# Certain build tools I need..
-dnf5 -y install libstdc++-static
-
-# Remove apps I don't care about
-dnf5 -y remove waydroid # Maybe later?
-dnf5 -y remove kate-libs # KWrite/Kate
-dnf5 -y remove *akonadi* # Calendar/emails/contacts etc.. I use Thunderbird
-dnf5 -y remove *krfb* # VNC remote desktop - I prefer RDP
-dnf5 -y remove gamescope-session-* # I don't understand why bazzite has it at all. I'm not on the -deck variant
-
-# Fonts! After install, get Windows 11 fonts from the Windows ISO and put them in $HOME/.local/share/fonts
+# Fonts I like; get Windows 11 fonts from the Windows ISO and put them in $HOME/.local/share/fonts
 dnf5 -y install --allowerasing --skip-broken google-noto-*
 dnf5 -y install --allowerasing --skip-broken jetbrains-mono-*
 dnf5 -y install --allowerasing --skip-broken fira-code-fonts
@@ -33,6 +23,7 @@ dnf5 -y install --allowerasing --skip-broken fira-code-fonts
 dnf5 -y install --allowerasing --skip-broken "https://vencord.dev/download/vesktop/amd64/rpm"
 mkdir -p /usr/share/Vesktop
 cp -r /opt/Vesktop /usr/share/
+sed -i 's#/opt/Vesktop#/usr/share/Vesktop#g' /usr/share/applications/vesktop.desktop
 
 # This was in the upstream build.sh.. whatever?
 systemctl enable podman.socket

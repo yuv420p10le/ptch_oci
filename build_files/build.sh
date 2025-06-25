@@ -25,5 +25,10 @@ mkdir -p /usr/share/Vesktop
 cp -r /opt/Vesktop /usr/share/
 sed -i 's#/opt/Vesktop#/usr/share/Vesktop#g' /usr/share/applications/vesktop.desktop
 
+# obs-gamecapture COPR to allow OBS to capture OpenGL games
+dnf5 -y copr enable bazzite-org/obs-vkcapture
+dnf5 -y install obs-vkcapture
+dnf5 -y copr disable bazzite-org/obs-vkcapture
+
 # This was in the upstream build.sh.. whatever?
 systemctl enable podman.socket
